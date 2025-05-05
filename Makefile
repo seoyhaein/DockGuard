@@ -1,15 +1,5 @@
-# DockGuard
+# Makefile
 
-## Install Opa CLI
-- https://www.openpolicyagent.org/docs/latest/#running-opa  
-
-## Install conftest 
-- https://www.conftest.dev/install/  
-
-
-## Makefile 구조
-
-```makefile
 OPA      ?= opa
 CONFTEST ?= conftest
 
@@ -38,35 +28,3 @@ test-conftest:
 # 3) 전체 테스트 (fmt → opa test → conftest test)
 test: fmt test-rego test-conftest
 	@echo "✅ All policy tests passed!"
-```
-
-
-## Usage
-
-### 전체 검사
-
-```bash
-make test
-```
-
-* `fmt` → `test-rego` → `test-conftest` 순서로 실행됩니다.
-
-### 개별 단계 실행
-
-* 포맷/린트 검사만:
-
-  ```bash
-  make fmt
-  ```
-
-* OPA 유닛 테스트만:
-
-  ```bash
-  make test-rego
-  ```
-
-* Conftest 린트만:
-
-  ```bash
-  make test-conftest
-  ```
