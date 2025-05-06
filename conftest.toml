@@ -1,0 +1,12 @@
+# 프로젝트 루트/conftest.toml
+
+# ── 정책(.rego) 디렉터리들 (여러 개 지정 가능) ──
+policy = ["policy/dockerfile", "policy/security", "policy/genomics"]
+
+# ── 검사할 Rego 네임스페이스들 ──
+# 여러 네임스페이스를 지정하면 해당 패키지 내 deny/warn 룰을 모두 실행합니다.
+namespace = ["dockerfile.multistage", "dockerfile.security", "dockerfile.genomics"]
+
+# ── 기본 파서와 Rego 버전 ──
+parser       = "dockerfile"
+rego-version = "v1"
