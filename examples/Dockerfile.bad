@@ -1,0 +1,11 @@
+# examples/Dockerfile.bad
+
+# 1) Builder 스테이지 별칭(AS builder) 누락 → (count_froms != 1) DFM001
+FROM ubuntu:20.04
+RUN echo "Setting up environment"
+
+# 2) 최종 스테이지 직접 정의 금지 → DFM003
+FROM alpine:3.14 AS final
+
+# 3) COPY --from=builder 사용 금지 → DFM004
+COPY --from=builder /app /app

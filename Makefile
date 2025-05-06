@@ -5,6 +5,7 @@ CONFTEST ?= conftest
 
 POLICY_DIR      := policy/dockerfile
 OPA_TEST_FILES  := $(wildcard $(POLICY_DIR)/*_test.rego)
+EXAMPLES_DIR := examples
 
 .PHONY: all fmt test-rego test-conftest test
 
@@ -22,8 +23,11 @@ test-rego: $(OPA_TEST_FILES)
 
 # 2) Conftest 통합 린트: POLICY_DIR 전체
 test-conftest:
-	@echo "==> conftest test --policy $(POLICY_DIR)"
-	@$(CONFTEST) test --policy $(POLICY_DIR)
+	@echo "==> conftest test $(EXAMPLES_DIR) --policy $(POLICY_DIR) --parser dockerfile"
+	@$(CONFTEST) test $(EXAMPLES_DIR) \
+	  --policy $(POLICY_DIR) \
+	  --parser dockerfile \
+	  --rego-version v1
 
 # 3) 전체 테스트 (fmt → opa test → conftest test)
 test: fmt test-rego test-conftest
