@@ -5,7 +5,7 @@ FROM ubuntu:20.04
 RUN echo "Setting up environment"
 
 # 2) 최종 스테이지 직접 정의 금지 → DFM003
-FROM alpine:3.14 AS final
+#FROM alpine:3.14 AS final
 
 # 3) COPY --from=builder 사용 금지 → DFM004
 COPY --from=builder /app /app
