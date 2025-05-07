@@ -71,4 +71,7 @@ make test
   make test-conftest
   ```
 
-### TODO 실제 dockerfile 검사 및 
+### TODO 실제 dockerfile 검사 및 conda, 기존 있는 여러 dockerfile 등 적용.
+- 먼저 rego 완성한다.
+- 이후 dockerfile parser 적용하고, 세부적인것을 적용한다. 메뉴얼 작성이라던지 이런것들.
+- bio 부분 확장해서 적용한다.

@@ -4,7 +4,7 @@
 policy = ["policy/dockerfile", "policy/security", "policy/genomics"]
 
 # ── 검사할 Rego 네임스페이스들 ──
-# 여러 네임스페이스를 지정하면 해당 패키지 내 deny/warn 룰을 모두 실행합니다.
+# 여러 네임스페이스를 지정하면 해당 패키지 내 deny/warn 룰을 모두 실행
 namespace = ["dockerfile.multistage", "dockerfile.security", "dockerfile.genomics"]
 
 # ── 기본 파서와 Rego 버전 ──
